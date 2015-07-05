@@ -1,4 +1,5 @@
 import(Matrix)
+
 importFrom(LowRankQP, LowRankQP)
 importFrom(stats, coef, coefficients, fitted, fitted.values, vcov, logLik)
 importFrom(graphics, plot)
@@ -12,6 +13,11 @@ importFrom(rgl, plot3d, persp3d)
 importFrom(kernlab, ipop, primal)
 importFrom(quadprog, solve.QP)
 importFrom(limSolve, lsei)
+importFrom("graphics", "abline", "axis", "box", "curve", "hist", "lines", "mtext", "par", "persp", "points", "rug", "title")
+importFrom("grDevices", "nclass.FD", "nclass.Sturges", "nclass.scott", "trans3d", "x11")
+importFrom("methods", "as")
+importFrom("stats", "aggregate", "approx", "approxfun", "dchisq", "df", "dnorm", "dt", "integrate", "make.link", "nlminb", "optim", "optimize", "pnorm", "pt", "qchisq", "qnorm", "qt", "quantile", "rnorm", "sd", "start", "var")
+importFrom("utils", "install.packages")
 
 
 

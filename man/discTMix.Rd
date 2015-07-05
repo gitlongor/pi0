@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Fit a discrete mixture of (noncentral) t-distributions}
 \description{
-Discrete mixture on central t and a specified number of noncentral t-distributions. This is essentially the same as \code{\link[OCplus:tMixture]{tMixture}} in \code{OCplus} package. 
+Discrete mixture on central t and a specified number of noncentral t-distributions. This is slightly modified code of \code{\link[OCplus:tMixture]{tMixture}} in \code{OCplus} package. 
 }
 \usage{
 discTMix(tstat, n1 = 10, n2 = n1, nq, p0, p1, D, delta, paired = FALSE, 
@@ -44,7 +44,7 @@ A list with \code{class} \code{discTMix}, with the following components:
 \references{
 Pawitan Y, Krishna Murthy KR, Michiels S, Ploner A (2005) Bias in the estimation of false discovery rate in microarray studies, Bioinformatics.
 }
-\author{Long Qu modified the \code{\link[OCplus:tMixture]{tMixture}} by Y. Pawitan and A. Ploner in \code{OCplus} package. }
+\author{Long Qu slightly modified the \code{\link[OCplus:tMixture]{tMixture}} by Y. Pawitan and A. Ploner in \code{OCplus} package. }
 \seealso{\code{\link[OCplus:tstatistics]{tstatistics}}, \code{\link[OCplus:EOC]{EOC}}, \code{\link{optim}}, \code{\link{fitted.discTMix}}}
 %\examples{
 %# We simulate a small example with 5 percent regulated genes and

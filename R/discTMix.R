@@ -11,7 +11,7 @@ discTMix= function(tstat, n1=10, n2=n1, nq, p0, p1, D, delta, paired=FALSE,
 #       260106 AP changed np to nq, added threshold for components
 #       060206 AP fixed eqDelta for nq=2, added check for nq<2
 #                 remove dimension-attribute to be compatible with tstatistics()
-#
+#	 	07/04/15 LQ truncated output from ff; edited final output list
 {
     # We want to deal with a vector of t-statistics, whch is unfortunately 
     # not what tstatistics() delivers
@@ -138,6 +138,7 @@ discTMix= function(tstat, n1=10, n2=n1, nq, p0, p1, D, delta, paired=FALSE,
             }
             ff = apply(FF,2,diff)
             fit = ng* c(ff %*% p)
+            ## -sum(log(fit)*y) ## modified to the following line by Long Qu
             -sum(log( pmax(fit, min(fit[fit>0])))*y)
     }
 
@@ -154,8 +155,8 @@ discTMix= function(tstat, n1=10, n2=n1, nq, p0, p1, D, delta, paired=FALSE,
     # Only components with absolute delta greater than a given threshold 
     # contribute to the estimation proper!
     p0.est = p0 + sum(p1[abs(delta)<threshold.delta])
-    ans=list(p0.est=p0.est, p0.raw=p0, p1=p1, D = delta/sf, delta = delta, 
-         threshold.delta=threshold.delta, AIC=AIC, opt=oo, data=list(tstat=tstat, df=n1+n2-2), pi0=p0)
+    #list(p0.est=p0.est, p0.raw=p0, p1=p1, D = delta/sf, delta = delta,          threshold.delta=threshold.delta, AIC=AIC, opt=oo) ## modified to the following line by Long Qu
+    ans=list(p0.est=p0.est, p0.raw=p0, p1=p1, D = delta/sf, delta = delta,          threshold.delta=threshold.delta, AIC=AIC, opt=oo,	 					 data=list(tstat=tstat, df=n1+n2-2), pi0=p0)
     class(ans)='discTMix'
     ans
 }
