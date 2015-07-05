@@ -11,7 +11,7 @@ nparncpp=function(p,
             ndelta=500,
             solver=c("lsei","LowRankQP","solve.QP","ipop"),
             weights=1,
-            keep.cdf=TRUE,
+            keep.cdf=NULL,
             LowRankQP.method=c('LU','CHOL'),
             lsei.method=c('chol','svd','eigen'),
             debugging=FALSE,
@@ -56,7 +56,7 @@ nparncpp=function(p,
         repeat{
             deltamax=deltamax+1
             if(cond.cdf(p.eval=breaks[2],ncp=deltamax,
-                df=df,test=test,alternative=alternative,keep.cdf=FALSE)>.95)
+                df=df,test=test,alternative=alternative,keep.cdf=NULL)>.95)
                 break
         }
     }

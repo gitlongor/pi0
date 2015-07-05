@@ -23,8 +23,8 @@ nparncpt.sqp = function (tstat, df, penalty=3L, lambdas=10^seq(-1,5,by=1), start
 	}else stop('"penalty" should be an integer among 1 through 5.')
     solver.package=switch(solver, solve.QP='limSolve', ipop='kernlab', lsei='limSolve',LowRankQP='LowRankQP'
     )
-    #Library(solver.package)
-    #Library("Matrix")
+    #library(solver.package)
+    #library("Matrix")
     if (K<=0 || length(K)!=1) stop("K should be a positive integer")
     if (any(lambdas<0)) stop("lambdas should be a vector of positive numbers")
     lambdas=sort(lambdas)
@@ -276,7 +276,7 @@ nparncpt.sqp = function (tstat, df, penalty=3L, lambdas=10^seq(-1,5,by=1), start
 
 #    if(smooth.enp) {
 #          warning("smoothing snp is not well tested")
-#Library("monoProc")
+#library("monoProc")
 #        loe=loess(enps~log10(lambdas))
 #        mon=mono.1d(list(log10(lambdas), fitted(loe)), bw.nrd0(fitted(loe))/3,mono1='decreasing')
 #        enps.smooth=mon@y
@@ -505,7 +505,7 @@ grad.C=function(thetas){  ## grad.C^TRUE thetas + C >=0
 Amat=grad.C(numeric(K))
     
 sqp=function(thetas, conv.f=1e-10, fnscale, verbose=TRUE) {
-#Library("quadprog")
+#library("quadprog")
   npll.last=Inf
   repeat{
 

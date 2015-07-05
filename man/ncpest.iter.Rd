@@ -10,7 +10,7 @@ A wrapper to iteratively call the \code{\link{nparncpp}} function
 }
 \usage{
 nparncpp.iter(p,estimates=c("all","compromise","pi0","f1"),iter=2,
-        weights, eps=1e-6,keep.cdf=TRUE,...)
+        weights, eps=1e-6,keep.cdf=NULL,...)
 
 }
 %- maybe also 'usage' for other objects documented here.
@@ -20,7 +20,7 @@ nparncpp.iter(p,estimates=c("all","compromise","pi0","f1"),iter=2,
   \item{iter}{max number of iterations}
   \item{weights}{bin weights}
   \item{eps}{Small tolerance number}
-  \item{keep.cdf}{Logical, as in \code{nparncpp}}
+  \item{keep.cdf}{Either \code{NULL} or an \code{environment}. If non-null, the computed computed conditional CDF will be saved \code{keep.cdf}. See \code{\link{cond.cdf}}. }
   \item{\dots}{other arguments to \code{nparncpp}}
 }
 %\details{

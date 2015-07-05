@@ -21,7 +21,7 @@ nparncpp(p,
     ndelta=500,
     solver=c("lsei","LowRankQP","solve.QP","ipop"),
     weights=1,
-    keep.cdf=TRUE,
+    keep.cdf=NULL,
     LowRankQP.method=c('LU','CHOL'),
     lsei.method=c('chol','svd','eigen'),
     debugging=FALSE,
@@ -42,7 +42,7 @@ nparncpp(p,
   \item{ndelta}{Number of points to evaluate the noncentrality parameters}
   \item{solver}{Quadratic programming solver function}
   \item{weights}{Bin weights}
-  \item{keep.cdf}{Logical: whether computed conditional CDF is saved in global enviroment. See \code{\link{cond.cdf}}. }
+  \item{keep.cdf}{Either \code{NULL} or an \code{environment}. If non-null, the computed computed conditional CDF will be saved \code{keep.cdf}. See \code{\link{cond.cdf}}. }
   \item{LowRankQP.method}{Method for \code{\link[LowRankQP:LowRankQP]{LowRankQP}}}
   \item{lsei.method}{Method for \code{\link[limSolve:lsei]{lsei}}}
   \item{debugging}{Logical: print excessive messages}

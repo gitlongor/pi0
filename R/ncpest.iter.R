@@ -1,4 +1,4 @@
-nparncpp.iter=function(p,estimates=c("all","compromise","pi0","f1"),iter=2,weights,eps=1e-6,keep.cdf=TRUE,...)
+nparncpp.iter=function(p,estimates=c("all","compromise","pi0","f1"),iter=2,weights,eps=1e-6,keep.cdf=NULL,...)
 {
 	estimates=match.arg(estimates)
     stopifnot(iter>=0)

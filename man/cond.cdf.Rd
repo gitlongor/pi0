@@ -11,7 +11,7 @@ conditional cdf of p-values given noncentrality parameters (ncp)
 }
 \usage{
 cond.cdf(p.eval,ncp,test=c("t","z"),alternative=c("two.sided","less",
-    "greater"), df=if(test=="z")Inf else df,keep.cdf=TRUE,
+    "greater"), df=if(test=="z")Inf else df,keep.cdf=NULL,
     suppressWarnings=TRUE) 
 }
 %- maybe also 'usage' for other objects documented here.
@@ -21,7 +21,7 @@ cond.cdf(p.eval,ncp,test=c("t","z"),alternative=c("two.sided","less",
   \item{test}{Either \code{t}-test or \code{z}-test. }
   \item{alternative}{The same as in \code{\link{t.test}}. }
   \item{df}{The degree of freedom. }
-  \item{keep.cdf}{Logical. If \code{TRUE}, the computed CDF will be stored in a hidden environment \code{.pi0cdfp} within the global environment for later re-use. }
+  \item{keep.cdf}{Either \code{NULL} or an \code{environment}. If this is non-null, the computed CDF will also be stored in \code{keep.cdf} environment to allow later use. As of version \code{1.4-0}, \code{keep.cdf=TRUE}, is no longer supported to comply with new CRAN policies; \code{keep.cdf=FALSE} will be treated the same as \code{keep.cdf=NULL}. }
   \item{suppressWarnings}{Logical, indicating if warnings are suppressed}
 }
 %\details{

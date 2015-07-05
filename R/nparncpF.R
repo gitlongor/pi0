@@ -13,8 +13,8 @@ nparncpF.sqp = function (Fstat, df1,df2, penalty=3, lambdas=10^seq(-1,8,by=1), s
     #penalty=match.arg(penalty)
     solver.package=switch(solver, solve.QP='limSolve', ipop='kernlab', lsei='limSolve',LowRankQP='LowRankQP'
     )
-    #Library(solver.package)
-    #Library("Matrix")
+    #library(solver.package)
+    #library("Matrix")
     if (K<=0 || length(K)!=1) stop("K should be a positive integer")
     if (any(lambdas<0)) stop("lambdas should be a vector of positive numbers")
     lambdas=sort(lambdas)
@@ -247,7 +247,7 @@ nparncpF.sqp = function (Fstat, df1,df2, penalty=3, lambdas=10^seq(-1,8,by=1), s
 
 #    if(smooth.enp) {
 #          warning("smoothing snp is not well tested")
-#Library("monoProc")
+#library("monoProc")
 #        loe=loess(enps~log10(lambdas))
 #        mon=mono.1d(list(log10(lambdas), fitted(loe)), bw.nrd0(fitted(loe))/3,mono1='decreasing')
 #        enps.smooth=mon@y
@@ -352,7 +352,7 @@ plot.nparncpF=function(x,...)
 }
 
 if(FALSE) {
-	#Library(pi0)
+	#library(pi0)
 	environment(nparncpF)=environment(nparncpF.sqp)=environment(nparncpt)
 	set.seed(243)
 	ncpt=c(rep(0,.31e3),rnorm(.69e3, .5))
@@ -371,8 +371,8 @@ if(FALSE) {
     penalty=match.arg(penalty)
     solver.package=switch(solver, solve.QP='limSolve', ipop='kernlab', lsei='limSolve',LowRankQP='LowRankQP'
     )
-    #Library(solver.package)
-    #Library("Matrix")
+    #library(solver.package)
+    #library("Matrix")
     if (K<=0 || length(K)!=1) stop("K should be a positive integer")
     if (any(lambdas<0)) stop("lambdas should be a vector of positive numbers")
     lambdas=sort(lambdas)
@@ -608,7 +608,7 @@ if(FALSE) {
 
 #    if(smooth.enp) {
 #          warning("smoothing snp is not well tested")
-#Library("monoProc")
+#library("monoProc")
 #        loe=loess(enps~log10(lambdas))
 #        mon=mono.1d(list(log10(lambdas), fitted(loe)), bw.nrd0(fitted(loe))/3,mono1='decreasing')
 #        enps.smooth=mon@y
