@@ -90,7 +90,7 @@ parncpF.unconstrained.noncentral=function(Fstat,df1,df2,starts, grids, method='N
         }
         
     deriv.noncentral=function(parms) { ### FIXME: analytical derivative not implemented yet
-        #loadOrInstall("numDeriv")
+        #Library("numDeriv")
         grad(obj, parms)
     }
     if(missing(starts)) {
@@ -143,7 +143,7 @@ parncpF.lbfgsb.central=function(Fstat,df1, df2, starts, grids, approximation='no
 	attr(ll,'nobs')=G
     class(ll)='logLik'
     
-#    loadOrInstall("numDeriv")
+#Library("numDeriv")
 #    tmp=make.link('logit'); logit=tmp$linkfun; logitinv=tmp$linkinv; dlogitinv=tmp$mu.eta
 #    obj.nobound=function(par)obj(c(logitinv(par[1]),exp(par[2])))
 #    app.hess.nobound=hessian(obj.nobound, c(logit(optimFit$par[1]), log(optimFit$par[2])))  ## need to consider hitting boundaries
@@ -171,7 +171,7 @@ parncpF.unconstrained.central=function(Fstat,df1, df2, starts, grids, method='Ne
                 -sum(log(Lik))
     }
     deriv.central=function(parms){### FIXME: analytical derivative not implemented yet
-        #loadOrInstall("numDeriv")
+        #Library("numDeriv")
         grad(obj, parms)
     }
     if(missing(starts)) {

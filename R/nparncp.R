@@ -23,8 +23,8 @@ nparncpt.sqp = function (tstat, df, penalty=3L, lambdas=10^seq(-1,5,by=1), start
 	}else stop('"penalty" should be an integer among 1 through 5.')
     solver.package=switch(solver, solve.QP='limSolve', ipop='kernlab', lsei='limSolve',LowRankQP='LowRankQP'
     )
-    #loadOrInstall(solver.package)
-    #loadOrInstall("Matrix")
+    #Library(solver.package)
+    #Library("Matrix")
     if (K<=0 || length(K)!=1) stop("K should be a positive integer")
     if (any(lambdas<0)) stop("lambdas should be a vector of positive numbers")
     lambdas=sort(lambdas)
@@ -180,7 +180,7 @@ nparncpt.sqp = function (tstat, df, penalty=3L, lambdas=10^seq(-1,5,by=1), start
                    }else if (solver=='LowRankQP') { ## not working well
                         tmpTransform=solve(tcrossprod(Amat),Amat)
                         Hmat=crossprod(tmpTransform, Dmat%*%tmpTransform)
-                        tmpAns=try(LowRankQP(Vmat=Hmat,dvec=Hmat%*%bvec-crossprod(tmpTransform,dvec),
+                        tmpAns=try(LowRankQP::LowRankQP(Vmat=Hmat,dvec=Hmat%*%bvec-crossprod(tmpTransform,dvec),
                                         Amat=matrix(0,0,K+1),bvec=numeric(0),uvec=rep(1e6,K+1),method='LU',niter=2000), silent=TRUE)
 	                    if(class(tmpAns)=='try-error' || any(is.na(tmpAns$alpha))){ # solver='lsei'
                             tmpA=chol(Dmat); tmpB=.5*drop(forwardsolve(t(tmpA), dvec)); 
@@ -276,7 +276,7 @@ nparncpt.sqp = function (tstat, df, penalty=3L, lambdas=10^seq(-1,5,by=1), start
 
 #    if(smooth.enp) {
 #          warning("smoothing snp is not well tested")
-#        loadOrInstall("monoProc")
+#Library("monoProc")
 #        loe=loess(enps~log10(lambdas))
 #        mon=mono.1d(list(log10(lambdas), fitted(loe)), bw.nrd0(fitted(loe))/3,mono1='decreasing')
 #        enps.smooth=mon@y
@@ -505,7 +505,7 @@ grad.C=function(thetas){  ## grad.C^TRUE thetas + C >=0
 Amat=grad.C(numeric(K))
     
 sqp=function(thetas, conv.f=1e-10, fnscale, verbose=TRUE) {
-#loadOrInstall("quadprog")
+#Library("quadprog")
   npll.last=Inf
   repeat{
 

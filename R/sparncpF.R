@@ -89,8 +89,8 @@ plot.sparncpF=function(x,...)
 #    solver=match.arg(solver)
 #    penalty=match.arg(penalty)
 #    solver.package=switch(solver, solve.QP='limSolve', ipop='kernlab', lsei='limSolve',LowRankQP='LowRankQP')
-#    loadOrInstall(solver.package)
-#    loadOrInstall("Matrix")
+#Library(solver.package)
+#Library("Matrix")
 #    if (K<=0 || length(K)!=1) stop("K should be a positive integer")
 #    if (any(lambdas<0)) stop("lambdas should be a vector of positive numbers")
 #    if (length(bounds)==1) bounds=c(-abs(bounds), abs(bounds))
@@ -323,7 +323,7 @@ plot.sparncpF=function(x,...)
 #
 #    if(smooth.enp) {
 #          warning("smoothing snp is not well tested")
-#        loadOrInstall("monoProc")
+#Library("monoProc")
 #        loe=loess(enps~log10(lambdas))
 #        mon=mono.1d(list(log10(lambdas), fitted(loe)), bw.nrd0(fitted(loe))/3,mono1='decreasing')
 #        enps.smooth=mon@y
@@ -537,7 +537,7 @@ grad.C=function(thetas){  ## grad.C^TRUE thetas + C >=0
 Amat=grad.C(numeric(K))
     
 sqp=function(thetas, conv.f=1e-10, fnscale, verbose=TRUE) {
-#loadOrInstall("quadprog")
+#Library("quadprog")
   npll.last=Inf
   repeat{
 

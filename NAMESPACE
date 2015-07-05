@@ -13,6 +13,8 @@ importFrom(rgl, plot3d, persp3d)
 importFrom(kernlab, ipop, primal)
 importFrom(quadprog, solve.QP)
 importFrom(limSolve, lsei)
+
+## added using K. Hornik's code since 3.3.0
 importFrom("graphics", "abline", "axis", "box", "curve", "hist", "lines", "mtext", "par", "persp", "points", "rug", "title")
 importFrom("grDevices", "nclass.FD", "nclass.Sturges", "nclass.scott", "trans3d", "x11")
 importFrom("methods", "as")
@@ -59,7 +61,7 @@ export(
     lastbin,
     lfdr, 
     load.cdf, 
-    loadOrInstall, 
+    #loadOrInstall, 
     marginal.dt,
     marginal.dt.nparncpt,
     marginal.dt.parncpt,
@@ -173,4 +175,14 @@ S3method(summary, subex)
 S3method(summary, subt)
 S3method(vcov, ncpest)
 
+S3method(marginal.dt, nparncpt)
+S3method(marginal.dt, parncpt)
+S3method(marginal.dt, sparncpt)
+S3method(sparncpF, 		nparncpF)
+S3method(sparncpF, 		numeric)
+S3method(sparncpF, 		parncpF)
+S3method(sparncpt, 		nparncpt)
+S3method(sparncpt, 		numeric)
+S3method(sparncpt, 		parncpt)
+  
 useDynLib(pi0)

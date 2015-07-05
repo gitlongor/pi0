@@ -6,8 +6,7 @@ Date: 2015-07-05
 Author: Long Qu 
 Maintainer: Long Qu <long.qu@wright.edu>
 Depends: R (>= 2.12.0)
-Imports: Matrix (>= 1.0-0), numDeriv, limSolve (>= 1.5.2), rgl, scatterplot3d, qvalue, Iso(>= 0.0-5), quadprog (>= 1.5-3), kernlab,   LowRankQP
-Suggests: OCplus
-Enhances: stats, graphics, limma
+Imports: Matrix (>= 1.0-0), numDeriv, limSolve (>= 1.5.2), rgl, scatterplot3d, qvalue, Iso(>= 0.0-5), quadprog (>= 1.5-3), kernlab,   LowRankQP, graphics, grDevices, methods, stats, utils
+Suggests: limma, OCplus
 Description: This package implements method(s) to (approximately unbiasedly) estimate the proportion of true null hypotheses, i.e., the pi0, when a very large number of hypotheses are simultaneously tested, especially for the purpose of (local) false discovery rate control for microarray data. It also contains functions to estimate the distribution of noncentrality parameters from a large number of parametric tests. 
 License: GPL (>= 2)

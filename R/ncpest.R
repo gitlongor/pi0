@@ -26,30 +26,14 @@ nparncpp=function(p,
     solver=match.arg(solver)
     if(solver=="LowRankQP") {
 ######## this is commented out as pi0 contains a copy of LowRankQP.c
-        load.pck=loadOrInstall("LowRankQP")
-        if(!isTRUE(load.pck)){
-            install.packages("LowRankQP")
-            stopifnot(loadOrInstall("LowRankQP"))
-        }
+        stopifnot(requireNamespace("LowRankQP"),quitely=TRUE)
         LowRankQP.method=match.arg(LowRankQP.method)
     }else if(solver=="solve.QP") {
-        load.pck=loadOrInstall("quadprog")
-        if(!isTRUE(load.pck)){
-            install.packages("quadprog")
-            stopifnot(loadOrInstall("quadprog"))
-        }
+        stopifnot(requireNamespace("quadprog"),quitely=TRUE)
     }else if (solver=='ipop') {
-        load.pck=loadOrInstall("kernlab")
-        if(!isTRUE(load.pck)){
-            install.packages("kernlab")
-            stopifnot(loadOrInstall("kernlab"))
-        }
+        stopifnot(requireNamespace("kernlab"),quitely=TRUE)
     }else if (solver=='lsei') {
-        load.pck=loadOrInstall("limSolve")
-        if(!isTRUE(load.pck)){
-            install.packages("limSolve")
-            stopifnot(loadOrInstall("limSolve"))
-        }
+        stopifnot(requireNamespace("limSolve"),quitely=TRUE)
         lsei.method=match.arg(lsei.method)
     }else stop("solver unimplemented!")
 
@@ -194,7 +178,7 @@ nparncpp=function(p,
                curmin.nopen=-yWWZ%*%thetanew+.5*t(thetanew)%*%ZWWZ%*%thetanew
             }else if(solver=="LowRankQP"){
                thetanew=as.vector(
-                        LowRankQP(Vmat=H,
+                        LowRankQP::LowRankQP(Vmat=H,
                                   dvec=-yWWZ,
                                   Amat=Amat,
                                   bvec=bvec,
