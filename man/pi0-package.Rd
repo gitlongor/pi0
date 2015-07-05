@@ -75,7 +75,9 @@ data(simulatedSubex); print(simulatedSubex)
 ## parametric, nonparametric, semiparametric estimate of 
 ## noncentrality parameter distribution from t-statistics
 data(simulatedTstat)
-simulatedTstat=head(simulatedTstat, 2000)
+\dontshow{
+if( Sys.getenv('_R_CHECK_TIMINGS_') != '' ) simulatedTstat=head(simulatedTstat, 1500)
+}
 (npfit=nparncpt(tstat=simulatedTstat, df=8, plotit=FALSE)); 
 (pfit=parncpt(tstat=simulatedTstat, df=8, zeromean=FALSE)); 
 (pfit0=parncpt(tstat=simulatedTstat, df=8, zeromean=TRUE)); 

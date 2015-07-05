@@ -44,9 +44,9 @@ G.J. McLachlan, R.W. Bean and L. Ben-Tovim Jones. (2006) A Simple implementation
 \author{ Long Qu }
 \seealso{\code{\link[qvalue:qvalue]{qvalue}}, \code{\link{histf1}}}
 \examples{
-set.seed(9992722)
-p=1-pnorm(c(rnorm(7000),rnorm(3000,1)))
-znormix(p, eps=1e-5)['pi0'] ##  0.6759555
+ set.seed(99722)
+ p=1-pnorm(c(rnorm(7000),rnorm(3000,1)))
+ znormix(p)['pi0']
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
