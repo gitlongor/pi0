@@ -7,7 +7,7 @@ Authors@R: c(
   person("Long", "Qu", role=c("aut", "cre","ctb"), email="long.qu@wright.edu"), 
   person(list("Yudi","Alexander"), list("Pawitan", "Ploner"), role="aut", comment="The author of OCplus::tMixture, which was modified slightly leading to discTMix in this package."),
   person(list('Egil', 'Mette', 'Marcus'), list('Ferkingstad', 'Langaas', 'Davy') , role="aut", comment="The author of limma::convest, which was modified slightly leading to convest in this package.")
-)
+  )
 Depends: R (>= 2.12.0)
 Imports: Matrix (>= 1.0-0), numDeriv, limSolve (>= 1.5.2), rgl, scatterplot3d, qvalue, Iso(>= 0.0-5), quadprog (>= 1.5-3), kernlab,   LowRankQP, graphics, grDevices, methods, stats
 Suggests: limma, OCplus
