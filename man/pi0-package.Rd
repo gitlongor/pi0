@@ -74,6 +74,8 @@ plot(simulatedSubex)
 data(simulatedSubex); print(simulatedSubex)
 ## parametric, nonparametric, semiparametric estimate of 
 ## noncentrality parameter distribution from t-statistics
+
+
 data(simulatedTstat)
 \dontshow{
 if( Sys.getenv('_R_CHECK_TIMINGS_') != '' ) simulatedTstat=head(simulatedTstat, 1500)
