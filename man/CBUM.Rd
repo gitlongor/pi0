@@ -37,9 +37,9 @@ Anastasios Markitsis and Yinglei Lai (2010) A censored beta mixture model for th
 \author{ Long Qu  modified the code from Markitsis and Lai (2010). }
 \seealso{\code{\link[qvalue:qvalue]{qvalue}}, \code{\link{histf1}}}
 \examples{
-set.seed(9992722)
-p=c(runif(7000), rbeta(3000, .8, 2.2))
-CBUM(p, eps=1e-5)
+set.seed(99722)
+p=c(runif(3500), rbeta(1500, .8, 2.2))
+CBUM(p)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

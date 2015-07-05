@@ -39,7 +39,8 @@ See \link[limma:08.Tests]{08.Tests} for other functions for producing or interpr
 
 \examples{
 set.seed(9992722)
-convest(runif(1e4)^1.5, niter=50)
+pvals = runif(5e3)^1.5
+convest(pvals, niter=50)[1]
 }
 \keyword{htest}
 
