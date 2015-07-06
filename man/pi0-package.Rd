@@ -70,18 +70,15 @@ simulatedDat=sim.dat(G=5000)
 ## this is how the 'simulatedSubex' object in this package generated
 simulatedSubex=subex(simulatedDat,balanced=FALSE,max.reps=Inf,plotit=FALSE)
 plot(simulatedSubex)
-}
+
 data(simulatedSubex); print(simulatedSubex)
 ## parametric, nonparametric, semiparametric estimate of 
 ## noncentrality parameter distribution from t-statistics
 
 
-data(simulatedTstat)
-\dontshow{
-if( Sys.getenv('_R_CHECK_TIMINGS_') != '' ) simulatedTstat=head(simulatedTstat, 1500)
-}
 (npfit=nparncpt(tstat=simulatedTstat, df=8, plotit=FALSE)); 
 (pfit=parncpt(tstat=simulatedTstat, df=8, zeromean=FALSE)); 
 (pfit0=parncpt(tstat=simulatedTstat, df=8, zeromean=TRUE)); 
 (spfit=sparncpt(npfit,pfit));
+}
 }
