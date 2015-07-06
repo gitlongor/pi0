@@ -5,6 +5,7 @@ Version: 1.4-0
 Date: 2015-07-05
 Authors@R: c(
   person("Long", "Qu", role=c("aut", "cre","ctb"), email="long.qu@wright.edu"), 
+  person("Kun", "Liang", role='ctb'),
   person(list("Yudi","Alexander"), list("Pawitan", "Ploner"), role="aut", comment="The author of OCplus::tMixture, which was modified slightly leading to discTMix in this package."),
   person(list('Egil', 'Mette', 'Marcus'), list('Ferkingstad', 'Langaas', 'Davy') , role="aut", comment="The author of limma::convest, which was modified slightly leading to convest in this package.")
   )
