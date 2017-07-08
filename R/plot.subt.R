@@ -8,7 +8,7 @@ plot.subt=function(x,y,rgl=TRUE,...)
     if(rgl) rgl=requireNamespace("rgl",quitely=TRUE)
 
     if(rgl){
-        plot3d(n1,n2,y,col=4,size=3,xlab='n1',ylab='n2',zlab='pi0',...=...)
+        rgl::plot3d(n1,n2,y,col=4,size=3,xlab='n1',ylab='n2',zlab='pi0',...=...)
     }else{
         warning("package rgl not found/used. scatterplot3d is used.")
         #library("scatterplot3d")
