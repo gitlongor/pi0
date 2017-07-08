@@ -57,7 +57,7 @@ combnBt2RAllDifc=function (x, n, m, x2, n2, m2, R, FUN, simplify, ...)
     env=environment()
     L=as.integer(0)
 
-    .Call("combnBt2Rc",n,  m,  n2,  m2, a, a2, 
+    .Call(C_combnBt2Rc,n,  m,  n2,  m2, a, a2, 
             selected.idx, R1,selected.idx2.all, R2perGrp1,
              L, quote(evalFUN()), env, allCombns, PACKAGE='pi0')
 

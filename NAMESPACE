@@ -183,4 +183,4 @@ S3method(sparncpt, 		nparncpt)
 S3method(sparncpt, 		numeric)
 S3method(sparncpt, 		parncpt)
   
-useDynLib(pi0)
+useDynLib(pi0, .registration =TRUE, .fixes="C_")

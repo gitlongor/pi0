@@ -4,7 +4,7 @@ Title: Estimating the Proportion of True Null Hypotheses for FDR
 Version: 1.4-1
 Date: 2017-07-09
 Authors@R: c(
-  person("Long", "Qu", role=c("aut", "cre","ctb"), email="long.qu@wright.edu"), 
+  person("Long", "Qu", role=c("aut", "cre","ctb"), email="rtistician@gmail.com"), 
   person("Kun", "Liang", role='ctb'),
   person(list("Yudi","Alexander"), list("Pawitan", "Ploner"), role="aut", comment="The author(s) of OCplus::tMixture, which was modified slightly leading to discTMix in this package."),
   person(list('Egil', 'Mette', 'Marcus'), list('Ferkingstad', 'Langaas', 'Davy') , role="aut", comment="The author(s) of limma::convest, which was modified slightly leading to convest in this package.")

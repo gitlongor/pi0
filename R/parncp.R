@@ -47,7 +47,7 @@ parncpt.bfgs.non0mean=function(tstat,df,starts, grids, approximation='int2',...)
             df.half=df/2; t2=tstat*tstat; t2vs2=t2+df*s2
             logK2=df.half*log(df.half)-.5*log(pi/2)-lgamma(df.half)
             logC=logK2-(df.half+.5)*log(t2/s2+df)- df.half*mu.ncp*mu.ncp/t2vs2
-    #        integral.xv1=.C('intTruncNormVec',n=as.integer(G),r=rep(as.integer(df+1),length=G), mu=tstat*mu.ncp/scale.fact/sqrt(t2vs2),
+    #        integral.xv1=.C(C_intTruncNormVec,n=as.integer(G),r=rep(as.integer(df+1),length=G), mu=tstat*mu.ncp/scale.fact/sqrt(t2vs2),
     #                                    sd=rep(as.double(1),length=G), lower=numeric(G), upper=rep(Inf,length=G), ans=numeric(G),NAOK=TRUE)$ans
             integral.xv1=mTruncNorm.int2(r=df+1, mu=tstat*mu.ncp/scale.fact/sqrt(t2vs2),
                                         sd=1, lower=0, upper=Inf, takeLog=TRUE, ndiv=8)
@@ -119,7 +119,7 @@ parncpt.bfgs.0mean=function(tstat,df, starts, grids, approximation='int2',...)
             df.half=df/2; t2=tstat*tstat; t2vs2=t2+df*s2
             logK2=df.half*log(df.half)-.5*log(pi/2)-lgamma(df.half)
             logC=logK2-(df.half+.5)*log(t2/s2+df)- df.half*mu.ncp*mu.ncp/t2vs2
-    #        integral.xv1=.C('intTruncNormVec',n=as.integer(G),r=rep(as.integer(df+1),length=G), mu=tstat*mu.ncp/scale.fact/sqrt(t2vs2),
+    #        integral.xv1=.C(C_intTruncNormVec,n=as.integer(G),r=rep(as.integer(df+1),length=G), mu=tstat*mu.ncp/scale.fact/sqrt(t2vs2),
     #                                    sd=rep(as.double(1),length=G), lower=numeric(G), upper=rep(Inf,length=G), ans=numeric(G),NAOK=TRUE)$ans
             integral.xv1=mTruncNorm.int2(r=df+1, mu=tstat*mu.ncp/scale.fact/sqrt(t2vs2),
                                         sd=1, lower=0, upper=Inf, takeLog=TRUE, ndiv=8)

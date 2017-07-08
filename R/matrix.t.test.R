@@ -19,7 +19,7 @@ function(x,       MARGIN=1,
        
         
 #        x;MARGIN;n1;n2;ntests;pool
-        tmp=.C("tstatistic",dat=x,n1=n1,n2=n2,ntests=ntests,MARGIN=MARGIN,pool=pool,tstat=rep(0.0,ntests),
+        tmp=.C(C_tstatistic,dat=x,n1=n1,n2=n2,ntests=ntests,MARGIN=MARGIN,pool=pool,tstat=rep(0.0,ntests),
                 df=rep(0.0,ntests), PACKAGE='pi0')
                 
         if(tOnly) return(tmp$tstat)

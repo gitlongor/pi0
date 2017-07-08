@@ -51,7 +51,7 @@ combnBtRc=function (x, n, m, R, FUN, simplify, ...)
     nexttoselect=as.integer(0)
     a=as.integer(rep(0,m))
     R=as.integer(R)
-    .Call("combnBtRc", n, m, a, selected.idx, R, nexttoselect, quote(evalFUN()), env,allCombns, PACKAGE='pi0');
+    .Call(C_combnBtRc, n, m, a, selected.idx, R, nexttoselect, quote(evalFUN()), env,allCombns, PACKAGE='pi0');
 
 
     if (simplify) dim(out)=dim.use

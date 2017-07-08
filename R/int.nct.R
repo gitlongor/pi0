@@ -36,12 +36,12 @@ mTruncNorm.int2=function(r=as.integer(1), mu=0.0, sd=1.0, lower=-Inf, upper=Inf,
     integer.r.idx=(r==round(r))
     n.int=as.integer(sum(integer.r.idx))
     ans=numeric(n)
-    if(n.int>0)    ans[integer.r.idx]=.C('intTruncNormVec', n=n.int, 
+    if(n.int>0)    ans[integer.r.idx]=.C(C_intTruncNormVec, n=n.int, 
                                                r=as.integer(r[integer.r.idx]), 
                                                mu=mu[integer.r.idx],  sd=sd[integer.r.idx], 
                                                low=lower[integer.r.idx], upp=upper[integer.r.idx], 
                                                ans=ans[integer.r.idx], NAOK=TRUE,PACKAGE='pi0')$ans
-    if(n-n.int>0) ans[!integer.r.idx]=.C('fracTruncNormVec', n=n-n.int, 
+    if(n-n.int>0) ans[!integer.r.idx]=.C(C_fracTruncNormVec, n=n-n.int, 
                                                r=as.double(r[!integer.r.idx]), 
                                                mu=mu[!integer.r.idx],  sd=sd[!integer.r.idx], 
                                                low=lower[!integer.r.idx], upp=upper[!integer.r.idx], 
@@ -82,11 +82,11 @@ dt.int2=function(x, df, ncp, log=FALSE, ndiv=8 ) ## pretty fast computation of n
 
     ints=numeric(n); ints+0
 
-    if(n.int>0)   ints[integer.df.idx]=.C('intTruncNormVec', n.int, 
+    if(n.int>0)   ints[integer.df.idx]=.C(C_intTruncNormVec, n.int, 
                                                as.integer(df[integer.df.idx]), 
                                                mus[integer.df.idx],  rep(as.double(1.0), n.int), 
                                                numeric(n.int), rep(Inf,n.int), ans=ints[integer.df.idx], NAOK=TRUE,PACKAGE='pi0')$ans
-    if(n-n.int>0) ints[!integer.df.idx]=.C('fracTruncNormVec', n=n-n.int, r=as.double(df)[!integer.df.idx], 
+    if(n-n.int>0) ints[!integer.df.idx]=.C(C_fracTruncNormVec, n=n-n.int, r=as.double(df)[!integer.df.idx], 
                             mu=mus[!integer.df.idx], sd=rep(as.double(1.0),n-n.int), 
                             low=rep(as.double(0.0), n-n.int), upp=rep(Inf, n-n.int),
                             ans=ints[!integer.df.idx], ndiv=as.integer(ndiv), takeLog=as.integer(1), NAOK=TRUE,PACKAGE='pi0')$ans
