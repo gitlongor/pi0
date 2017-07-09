@@ -32,7 +32,7 @@ to DNA microarray data.
 \emph{Journal of the Royal Statistical Society Series} B, 67, 555-572.
 Preprint at \url{http://www.math.ntnu.no/~mettela/}
 }
-\author{Long Qu slightly modified and \code{\link[limma:convest]{convest}} function by Egil Ferkingstad and Mette Langaas in \code{limma} package. }
+\author{Long Qu slightly modified and \code{\link[limma:propTrueNull]{convest}} function by Egil Ferkingstad and Mette Langaas in \code{limma} package. }
 \seealso{
 See \link[limma:08.Tests]{08.Tests} for other functions for producing or interpretting p-values.
 }
