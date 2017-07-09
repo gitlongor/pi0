@@ -35,7 +35,7 @@ License: \tab GPL version 2 or newer\cr
 \author{
 Long Qu 
 
-Maintainer: Long Qu \email{long.qu@wright.edu}
+Maintainer: Long Qu \email{rtistician@gmail.com}
 }
 \references{
 

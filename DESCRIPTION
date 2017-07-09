@@ -1,7 +1,7 @@
 Package: pi0
 Type: Package
 Title: Estimating the Proportion of True Null Hypotheses for FDR
-Version: 1.4-1
+Version: 1.4-1-1
 Date: 2017-07-09
 Authors@R: c(
   person("Long", "Qu", role=c("aut", "cre","ctb"), email="rtistician@gmail.com"), 
